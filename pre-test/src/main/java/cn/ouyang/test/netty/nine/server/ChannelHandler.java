@@ -1,4 +1,4 @@
-package cn.ouyang.test.netty.nine.coder;
+package cn.ouyang.test.netty.nine.server;
 
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
