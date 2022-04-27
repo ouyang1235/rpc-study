@@ -8,6 +8,9 @@ import io.netty.channel.socket.nio.NioDatagramChannel;
 
 public class NettyServer {
 
+    public static void main(String[] args) {
+        new NettyServer().bind(7397);
+    }
 
 
     private void bind(int port){

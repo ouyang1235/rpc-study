@@ -8,6 +8,6 @@ public class MyClientUdpInitializer extends ChannelInitializer<NioDatagramChanne
     @Override
     protected void initChannel(NioDatagramChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
-        pipeline.addLast();
+        pipeline.addLast(new MyUdpClientHandler());
     }
 }
