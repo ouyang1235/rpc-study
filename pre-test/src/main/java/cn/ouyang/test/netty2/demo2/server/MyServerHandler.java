@@ -1,5 +1,6 @@
 package cn.ouyang.test.netty2.demo2.server;
 
+import cn.ouyang.test.netty2.demo2.util.MsgUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.socket.SocketChannel;
@@ -25,7 +26,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
         logger.info("链接报告完毕");
         //通知客户端链接建立成功
         String str = "[通知] 链接建立成功" + " " + new Date() + " " + channel.localAddress().getHostString() + "\r\n";
-        ctx.writeAndFlush(str);
+        ctx.writeAndFlush(MsgUtil.buildMsg(channel.id().toString(), str));
     }
 
     @Override
@@ -36,8 +37,8 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         logger.info(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + " 服务端接收到消息: " + msg);
-        String str = "[服务器] " + new Date() + " 我已收到:" + msg + "\r\n";
-        ctx.writeAndFlush(str);
+//        String str = "[服务器] " + new Date() + " 我已收到:" + msg + "\r\n";
+//        ctx.writeAndFlush(str);
     }
 
     @Override

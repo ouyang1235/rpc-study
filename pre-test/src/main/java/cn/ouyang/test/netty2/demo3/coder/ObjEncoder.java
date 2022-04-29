@@ -1,6 +1,6 @@
-package cn.ouyang.test.netty2.demo2.coder;
+package cn.ouyang.test.netty2.demo3.coder;
 
-import cn.ouyang.test.netty2.demo2.util.SerializationUtil;
+import cn.ouyang.test.netty2.demo3.util.SerializationUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

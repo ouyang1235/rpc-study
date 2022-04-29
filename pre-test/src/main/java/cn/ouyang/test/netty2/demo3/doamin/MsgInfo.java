@@ -1,4 +1,4 @@
-package cn.ouyang.test.netty2.demo2.doamin;
+package cn.ouyang.test.netty2.demo3.doamin;
 
 public class MsgInfo {
 

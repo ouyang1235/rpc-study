@@ -1,4 +1,4 @@
-package cn.ouyang.test.netty2.demo2.util;
+package cn.ouyang.test.netty2.demo3.util;
 
 
 import com.dyuproject.protostuff.LinkedBuffer;
@@ -37,6 +37,13 @@ public class SerializationUtil {
     }
 
 
+    /**
+     * 反序列化
+     * @param data
+     * @param cls
+     * @param <T>
+     * @return
+     */
     public static  <T> T deserialize(byte[] data,Class<T> cls){
         try{
             T msg = objenesis.newInstance(cls);

@@ -1,4 +1,4 @@
-package cn.ouyang.test.netty2.demo2.server;
+package cn.ouyang.test.netty2.demo3.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -10,8 +10,6 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import java.net.InetSocketAddress;
 
 @Component("nettyServer")
 public class NettyServer {
