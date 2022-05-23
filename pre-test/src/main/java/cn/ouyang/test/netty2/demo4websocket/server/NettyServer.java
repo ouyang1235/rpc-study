@@ -11,20 +11,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Component("nettyServer")
+import java.net.InetSocketAddress;
+
+@Component("nettyServerWebSocket")
 public class NettyServer {
 
     private Logger logger = LoggerFactory.getLogger(NettyServer.class);
-
-    public static void main(String[] args) {
-        new NettyServer().bing(7397);
-    }
 
     private final EventLoopGroup parentGroup =  new NioEventLoopGroup();
     private final EventLoopGroup childGroup =  new NioEventLoopGroup();
     private Channel channel;
 
-    public ChannelFuture bing(int port){
+    public ChannelFuture bing(InetSocketAddress address){
         ChannelFuture channelFuture = null;
         try{
             ServerBootstrap b = new ServerBootstrap();
@@ -33,7 +31,7 @@ public class NettyServer {
                     .option(ChannelOption.SO_BACKLOG,128)
                     .childHandler(new MyChannelInitializer());
 
-            channelFuture = b.bind(port).syncUninterruptibly();
+            channelFuture = b.bind(address).syncUninterruptibly();
             channel = channelFuture.channel();
 
         }catch (Exception e){

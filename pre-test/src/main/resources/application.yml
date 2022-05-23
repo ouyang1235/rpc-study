@@ -4,3 +4,9 @@ server:
 netty:
   host: 127.0.0.1
   port: 7397
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
